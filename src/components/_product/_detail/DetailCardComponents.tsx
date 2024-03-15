@@ -29,7 +29,7 @@ export function ProductDescription({ description }: { description: string }) {
                     className="block sm:hidden flex items-center justify-between w-full p-1.5 px-3 text-base"
                     onClick={toggleInfo}
                 >
-                    Product Info
+                    {'Product Info'}
                     <span ref={plusRef}>
                         <GoPlus className="inline text-xl" />
                     </span>
@@ -80,7 +80,7 @@ export function AddCartButton({ item }: { item: IProduct }) {
                 className="btn flex-1 min-w-24 h-auto p-3 shadow-md font-normal text-base sm:text-xl text-white border-0 bg-blue-600 hover:bg-blue-700 transition duration-300"
                 onClick={() => addToCart(item)}
             >
-                Add to cart
+                {'Add to cart'}
             </button>
 
             <Transition appear show={isOpen} as={Fragment}>
@@ -113,14 +113,17 @@ export function AddCartButton({ item }: { item: IProduct }) {
                                         as="h3"
                                         className="text-lg font-medium"
                                     >
-                                        Already in the cart
+                                        {'Already in the cart'}
                                     </Dialog.Title>
                                     <div className="mt-2">
                                         <p className="text-sm text-gray-500">
-                                            This item is already in your cart.
+                                            {
+                                                'This item is already in your cart.'
+                                            }
                                             <br />
-                                            You can change the quantity in the
-                                            cart.
+                                            {
+                                                'You can change the quantity in the cart.'
+                                            }
                                         </p>
                                     </div>
 
@@ -131,14 +134,14 @@ export function AddCartButton({ item }: { item: IProduct }) {
                                             className="flex-1 inline-flex justify-center px-4 py-2.5 rounded-md text-base text-white bg-blue-600 hover:bg-blue-700 transition duration-300"
                                             onClick={closeModal}
                                         >
-                                            Go to cart
+                                            {'Go to cart'}
                                         </Link>
                                         <button
                                             type="button"
                                             className="inline-flex justify-center px-3 py-2.5 rounded-md text-base text-blue-600 bg-transparent hover:!bg-blue-100 dark:hover:!bg-neutral-900 transition duration-300"
                                             onClick={closeModal}
                                         >
-                                            Cancel
+                                            {'Cancel'}
                                         </button>
                                     </div>
                                 </Dialog.Panel>
@@ -162,7 +165,7 @@ export function PurchaseButton({ item }: { item: IProduct }) {
                 setCheckout([{ ...item, qty: 1 }]);
             }}
         >
-            Purchase
+            {'Purchase'}
         </Link>
     );
 }

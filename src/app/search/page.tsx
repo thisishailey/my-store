@@ -11,7 +11,7 @@ export default function SearchPage({
     const query = searchParams.query;
 
     return (
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<div>{'Loading...'}</div>}>
             <Wrap classList="px-4">
                 <div className="h-12"></div>
                 <SearchBar query={query} />

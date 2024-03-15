@@ -95,16 +95,18 @@ export default function CartTable() {
                         <table className="w-full md:w-2/3">
                             <thead className="border-b border-gray-300 dark:border-neutral-600">
                                 <tr className="text-sm h-12">
-                                    <th className="font-medium pl-3">Item</th>
+                                    <th className="font-medium pl-3">
+                                        {'Item'}
+                                    </th>
                                     <th className="font-medium"></th>
                                     <th className="font-medium text-center">
-                                        Quantity
+                                        {'Quantity'}
                                     </th>
                                     <th className="hidden sm:table-cell font-medium text-center">
-                                        Price
+                                        {'Price'}
                                     </th>
                                     <th className="font-medium text-center">
-                                        Total
+                                        {'Total'}
                                     </th>
                                     <th className="font-medium"></th>
                                 </tr>

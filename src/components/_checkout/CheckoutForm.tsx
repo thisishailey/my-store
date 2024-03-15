@@ -1,3 +1,9 @@
+'use client';
+
+import { useRouter } from 'next/navigation';
+import { useCheckoutStore } from '@/stores/checkoutStore';
+import { useOrderStore } from '@/stores/orderStore';
+import { useCartStore } from '@/stores/cartStore';
 import CheckoutSummary from '@/components/_checkout/CheckoutSummary';
 
 interface Props {
@@ -8,6 +14,21 @@ interface Props {
 }
 
 export default function CheckoutForm(props: Props) {
+    const { replace } = useRouter();
+
+    const { checkout, fromCart, clearCheckout } = useCheckoutStore();
+    const { addOrder } = useOrderStore();
+    const { emptyCart } = useCartStore();
+
+    const handleOrderComplete = () => {
+        addOrder(checkout);
+        clearCheckout();
+        if (fromCart) {
+            emptyCart();
+        }
+        replace('/checkout/success');
+    };
+
     const formInputs = [
         {
             id: 'first-name',
@@ -37,7 +58,10 @@ export default function CheckoutForm(props: Props) {
     ];
 
     return (
-        <form className="flex flex-col md:flex-row items-center justify-between gap-14 p-4 !mb-20 checkout-form">
+        <form
+            action={handleOrderComplete}
+            className="flex flex-col md:flex-row items-center justify-between gap-14 p-4 !mb-20 checkout-form"
+        >
             <div className="w-full md:max-w-lg">
                 {formInputs.map((input) => (
                     <div key={input.id}>
@@ -62,7 +86,7 @@ export default function CheckoutForm(props: Props) {
                     </div>
                 ))}
             </div>
-            <CheckoutSummary />
+            <CheckoutSummary checkout={checkout} />
         </form>
     );
 }

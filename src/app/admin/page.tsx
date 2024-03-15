@@ -17,19 +17,19 @@ export default function AdminPage() {
                     className="p-3 rounded-lg bg-gray-500 text-white text-base"
                     onClick={emptyCart}
                 >
-                    Reset Cart
+                    {'Reset Cart'}
                 </button>
                 <button
                     className="p-3 rounded-lg bg-gray-500 text-white text-base"
                     onClick={clearCheckout}
                 >
-                    Reset Checkout
+                    {'Reset Checkout'}
                 </button>
                 <button
                     className="p-3 rounded-lg bg-gray-500 text-white text-base"
                     onClick={clearOrderHistory}
                 >
-                    Reset Order History
+                    {'Reset Order History'}
                 </button>
                 <button
                     className="p-3 rounded-lg bg-gray-500 text-white text-base"
@@ -39,7 +39,7 @@ export default function AdminPage() {
                         clearOrderHistory();
                     }}
                 >
-                    Reset All
+                    {'Reset All'}
                 </button>
             </div>
         </Wrap>

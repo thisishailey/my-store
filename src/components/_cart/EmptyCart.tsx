@@ -30,7 +30,7 @@ export function EmptyCartButton({ classList, onClick }: EmptyCartButtonProps) {
             onMouseOver={() => arrowBounceEffect(true)}
             onMouseLeave={() => arrowBounceEffect(false)}
         >
-            Explore products
+            {'Explore products'}
             <ArrowRightIcon
                 className="inline w-5 ml-3 arrow-icon"
                 onMouseOver={(e) => e.stopPropagation()}
@@ -44,7 +44,7 @@ export default function EmptyCart() {
     return (
         <div className="flex flex-col items-center py-10">
             <h3 className="mb-10 text-lg sm:text-xl">
-                You don't have anything in your cart.
+                {"You don't have anything in your cart."}
             </h3>
             <EmptyCartButton classList="text-xl" />
         </div>

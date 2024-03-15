@@ -21,7 +21,7 @@ export default async function ProductDetailPage({
     const product = await getProductData(id);
 
     return (
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<div>{'Loading...'}</div>}>
             <Wrap>
                 <ProductBreadcrumbs
                     category={product.category}

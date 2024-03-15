@@ -18,7 +18,7 @@ export default function Footer() {
                 <div className="flex flex-col items-center gap-12 w-full max-w-7xl my-0 mx-auto pt-14 pb-14 lg:pb-20 px-8 lg:px-12">
                     <div className="flex items-start justify-center sm:justify-between w-full text-sm lg:p-6 !pb-12 border-b border-solid border-neutral-400">
                         <div className="hidden sm:block">
-                            <p className="mb-3 font-semibold">About Us</p>
+                            <p className="mb-3 font-semibold">{'About Us'}</p>
                             <ul>
                                 {company.map((item) => (
                                     <li key={item} className={liClassList}>
@@ -28,7 +28,7 @@ export default function Footer() {
                             </ul>
                         </div>
                         <div className="hidden sm:block">
-                            <p className="mb-3 font-semibold">Shop</p>
+                            <p className="mb-3 font-semibold">{'Shop'}</p>
                             <ul>
                                 {CATEGORY.map((category) => {
                                     return (
@@ -49,7 +49,7 @@ export default function Footer() {
                         </div>
                         <div className="hidden md:block">
                             <p className="mb-3 font-semibold">
-                                Customer Service
+                                {'Customer Service'}
                             </p>
                             <ul>
                                 {service.map((item) => (
@@ -61,30 +61,32 @@ export default function Footer() {
                         </div>
                         <div className="sm:ml-6 sm:mr-12 lg:ml-10 lg:mr-20">
                             <h4 className="mb-3 font-semibold text-lg text-center">
-                                Contact Us
+                                {'Contact Us'}
                             </h4>
                             <ul>
                                 <li className="mb-1">
                                     <HiOutlineMail className="inline" />
                                     <span className="pl-4">
-                                        mystore@gmail.com
+                                        {'mystore@gmail.com'}
                                     </span>
                                 </li>
                                 <li className="mb-1">
                                     <FaXTwitter className="inline" />
                                     <span className="pl-4">
-                                        mystore_official
+                                        {'mystore_official'}
                                     </span>
                                 </li>
                                 <li className="mb-1">
                                     <FaInstagram className="inline" />
                                     <span className="pl-4">
-                                        mystore_onlineshopping
+                                        {'mystore_onlineshopping'}
                                     </span>
                                 </li>
                                 <li className="mb-1">
                                     <IoCallOutline className="inline" />
-                                    <span className="pl-4">032-1515-3300</span>
+                                    <span className="pl-4">
+                                        {'032-1515-3300'}
+                                    </span>
                                 </li>
                             </ul>
                         </div>
@@ -92,18 +94,18 @@ export default function Footer() {
                     <div className="flex items-center justify-between w-full text-xs">
                         <div>
                             <span>
-                                © 2024 MyStore, Inc. All Rights Reserved.
+                                {'© 2024 MyStore, Inc. All Rights Reserved.'}
                             </span>
                         </div>
                         <div className="hidden sm:flex !gap-4 md:!gap-6 lg:!gap-8">
                             <span className="cursor-pointer hover:underline">
-                                Guide
+                                {'Guide'}
                             </span>
                             <span className="cursor-pointer hover:underline">
-                                Terms & Conditions
+                                {'Terms & Conditions'}
                             </span>
                             <span className="cursor-pointer hover:underline">
-                                Privacy Policy
+                                {'Privacy Policy'}
                             </span>
                         </div>
                     </div>

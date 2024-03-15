@@ -18,7 +18,7 @@ export default function LogInForm({
                     htmlFor="email"
                     className="block text-sm sm:text-base font-medium"
                 >
-                    Email address
+                    {'Email address'}
                 </label>
                 <div className="mt-2">
                     <input
@@ -39,13 +39,13 @@ export default function LogInForm({
                         htmlFor="password"
                         className="block text-sm sm:text-base font-medium"
                     >
-                        Password
+                        {'Password'}
                     </label>
                     <a
                         href="/"
                         className="text-xs font-medium text-blue-600 hover:text-blue-500"
                     >
-                        Forgot password?
+                        {'Forgot password?'}
                     </a>
                 </div>
                 <div className="mt-2">
@@ -66,17 +66,17 @@ export default function LogInForm({
                     type="submit"
                     className="flex justify-center w-full p-2.5 rounded-lg text-lg text-white shadow-sm bg-blue-600 hover:bg-blue-700 transition duration-300"
                 >
-                    Sign in
+                    {'Sign in'}
                 </button>
             </div>
 
             <p className="mt-6 text-center text-sm sm:text-base text-gray-500">
-                Not a member?
+                {'Not a member?'}
                 <Link
                     href="/account/signup"
                     className="ml-4 font-medium text-blue-600 hover:text-blue-500"
                 >
-                    Join us
+                    {'Join us'}
                 </Link>
             </p>
         </form>

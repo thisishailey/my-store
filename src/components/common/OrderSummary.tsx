@@ -61,20 +61,20 @@ export default function OrderSummary(props: OrderSummaryProps) {
             </div>
             <ul className="flex flex-col gap-2 text-sm sm:text-base font-light text-neutral-600 dark:text-neutral-300">
                 <li className="flex justify-between">
-                    <span>Subtotal</span>
+                    <span>{'Subtotal'}</span>
                     <span>${props.subtotal.toFixed(2)}</span>
                 </li>
                 <li className="flex justify-between">
-                    <span>Shipping</span>
+                    <span>{'Shipping'}</span>
                     <span>${props.shipping.toFixed(2)}</span>
                 </li>
                 <li className="flex justify-between">
-                    <span>Taxes</span>
+                    <span>{'Taxes'}</span>
                     <span>${props.tax.toFixed(2)}</span>
                 </li>
             </ul>
             <div className="flex justify-between text-base sm:text-lg font-medium py-3 border-t border-b border-gray-300 dark:border-neutral-500">
-                <span>Total</span>
+                <span>{'Total'}</span>
                 <span>${props.total.toFixed(2)}</span>
             </div>
             {!props.isOrderComplete && (
@@ -83,7 +83,7 @@ export default function OrderSummary(props: OrderSummaryProps) {
                     onClick={props.onClick}
                     className="py-3 rounded-xl text-center text-base text-white bg-blue-600 transition-all duration-300 hover:bg-blue-700 hover:text-lg"
                 >
-                    Pay ${props.total.toFixed(2)}
+                    {`Pay $${props.total.toFixed(2)}`}
                 </button>
             )}
         </div>

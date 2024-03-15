@@ -13,7 +13,7 @@ export default async function ProductBreadcrumbs({
         <div className="mb-10 text-xs sm:text-sm breadcrumbs">
             <ul>
                 <li>
-                    <Link href={'/product/category/all'}>Products</Link>
+                    <Link href={'/product/category/all'}>{'Products'}</Link>
                 </li>
                 <li>
                     <Link

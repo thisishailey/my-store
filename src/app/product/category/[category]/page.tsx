@@ -18,7 +18,7 @@ export default async function ProductCategoryPage({ params }: ICategoryParams) {
     }
 
     return (
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<div>{'Loading...'}</div>}>
             <h2 className="text-2xl font-semibold capitalize">{category}</h2>
         </Suspense>
     );

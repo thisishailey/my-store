@@ -8,7 +8,7 @@ export default async function CheckoutPage() {
     return (
         <Wrap>
             <h2 className="text-2xl sm:text-3xl font-semibold w-full m-6 py-4 px-1">
-                Checkout
+                {'Checkout'}
             </h2>
             {user ? (
                 <CheckoutForm

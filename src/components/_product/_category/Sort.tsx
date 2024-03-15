@@ -17,8 +17,8 @@ const sortList: { id: TSortOption; text: string; smallText: string }[] = [
 export function RadioSort({ sortOption, changeSortOption }: SortProps) {
     return (
         <fieldset className="flex flex-col gap-2">
-            <legend className="ml-4 text-xs lg:text-sm font-medium text-gray-500 dark:text-neutral-300">
-                SORT BY
+            <legend className="ml-4 uppercase text-xs lg:text-sm font-medium text-gray-500 dark:text-neutral-300">
+                {'sort by'}
             </legend>
             {sortList.map((sort) => {
                 return (

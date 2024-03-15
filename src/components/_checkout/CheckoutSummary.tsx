@@ -1,36 +1,11 @@
-'use client';
-
-import { useEffect } from 'react';
-import { useRouter } from 'next/navigation';
-import { useCheckoutStore } from '@/stores/checkoutStore';
-import { useOrderStore } from '@/stores/orderStore';
-import { useCartStore } from '@/stores/cartStore';
 import OrderSummary from '@/components/common/OrderSummary';
+import type ICartItem from '@/types/cartItem';
 
-export default function CheckoutSummary() {
-    const { replace } = useRouter();
-
-    const { checkout, fromCart, clearCheckout } = useCheckoutStore();
-    const { addOrder } = useOrderStore();
-    const { emptyCart } = useCartStore();
-
-    const handleOrderComplete = (e: SubmitEvent) => {
-        e.preventDefault();
-        addOrder(checkout);
-        clearCheckout();
-        if (fromCart) {
-            emptyCart();
-        }
-        replace('/checkout/success');
-    };
-
-    useEffect(() => {
-        const form = document.querySelector(
-            '.checkout-form'
-        ) as HTMLFormElement;
-        form.onsubmit = handleOrderComplete;
-    }, []);
-
+export default function CheckoutSummary({
+    checkout,
+}: {
+    checkout: ICartItem[];
+}) {
     const subtotal = checkout.reduce((acc, cur) => {
         return cur.price * cur.qty + acc;
     }, 0);

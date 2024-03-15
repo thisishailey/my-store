@@ -22,11 +22,11 @@ export default async function UserPage() {
     return (
         <Wrap>
             <h2 className="pt-10 text-center text-3xl font-medium">
-                Welcome, {user?.user.firstName}!
+                {`Welcome, ${user?.user.firstName}!`}
             </h2>
             <div className="mt-20 p-4 sm:max-w-sm lg:max-w-lg mx-auto rounded-xl shadow-md ring-2 ring-gray-200/50 dark:ring-neutral-700/10 bg-gray-100 dark:bg-neutral-800">
                 <h3 className="!mb-4 !pb-4 border-b border-gray-300 dark:border-neutral-400 text-2xl font-medium">
-                    Personal Info
+                    {'Personal Info'}
                 </h3>
                 <ul className="space-y-6">
                     {infoList.map((info) => {
@@ -60,7 +60,7 @@ export default async function UserPage() {
                     type="submit"
                     className="py-2.5 px-14 rounded-lg shadow-md text-xl text-white bg-blue-600 hover:bg-blue-700 transform duration-300"
                 >
-                    Log Out
+                    {'Log Out'}
                 </button>
             </form>
         </Wrap>

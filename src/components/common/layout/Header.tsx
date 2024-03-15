@@ -16,8 +16,8 @@ export default function Header() {
                     <MenuButton />
                     <ThemeButton />
                 </div>
-                <h1 className="flex items-center text-xl font-semibold hover:text-neutral-600 dark:hover:text-neutral-300 transform duration-300">
-                    <Link href={'/'}>MY STORE</Link>
+                <h1 className="flex items-center uppercase text-xl font-semibold hover:text-neutral-600 dark:hover:text-neutral-300 transform duration-300">
+                    <Link href={'/'}>{'my store'}</Link>
                 </h1>
                 <ul className="flex-1 basis-0 flex items-center justify-end gap-0.5 md:gap-2">
                     <li className="hidden lg:block">

@@ -201,7 +201,7 @@ export function AccountButton() {
                                 {user ? (
                                     <div className="flex flex-col gap-2 w-full">
                                         <p className="text-sm">
-                                            Logged in with{' '}
+                                            {'Logged in with '}
                                             <span className="font-medium">
                                                 {user}
                                             </span>
@@ -211,7 +211,7 @@ export function AccountButton() {
                                             onClick={() => close()}
                                             className="p-2 rounded-lg text-center text-white text-sm bg-blue-600 hover:bg-blue-700 transition duration-300"
                                         >
-                                            View Account
+                                            {'View Account'}
                                         </Link>
                                         <button
                                             onClick={async () => {
@@ -220,7 +220,7 @@ export function AccountButton() {
                                             }}
                                             className="p-2 rounded-lg text-center text-blue-600 text-sm border-1 border-blue-600 hover:bg-blue-100 dark:hover:bg-neutral-800 transition duration-300"
                                         >
-                                            Log Out
+                                            {'Log Out'}
                                         </button>
                                     </div>
                                 ) : (
@@ -230,7 +230,7 @@ export function AccountButton() {
                                             onClick={() => close()}
                                             className="p-2 rounded-lg text-center text-white text-lg bg-blue-600 hover:bg-blue-700 transition duration-300"
                                         >
-                                            Log In
+                                            {'Log In'}
                                         </Link>
                                         <hr className="text-neutral-400 opacity-100 text-center overflow-visible after:content-['or'] after:relative after:bottom-3 after:px-1 after:bg-white dark:after:!bg-black" />
                                         <Link
@@ -238,7 +238,7 @@ export function AccountButton() {
                                             onClick={() => close()}
                                             className="p-2 rounded-lg text-center text-blue-600 text-lg border-1 border-blue-600 hover:bg-blue-100 dark:hover:bg-neutral-800 transition duration-300"
                                         >
-                                            Sign Up
+                                            {'Sign Up'}
                                         </Link>
                                     </div>
                                 )}
@@ -313,7 +313,7 @@ export function CartButton() {
                                         onClick={() => close()}
                                         className="w-72 py-2.5 rounded-lg text-center text-lg text-white bg-blue-600 hover:bg-blue-700 transition duration-300"
                                     >
-                                        Go to cart
+                                        {'Go to cart'}
                                     </Link>
                                 </div>
                             </div>
@@ -325,7 +325,7 @@ export function CartButton() {
                             <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black/5 dark:ring-white/5">
                                 <div className="relative p-2 bg-white dark:!bg-black">
                                     <div className="flex items-center p-2 pb-3 text-sm rounded-lg">
-                                        Your shopping cart is empty.
+                                        {'Your shopping cart is empty.'}
                                     </div>
                                     <EmptyCartButton
                                         classList="w-56 text-base"
@@ -377,7 +377,7 @@ export function MenuButton() {
                 onClick={openSidePanel}
             >
                 <FiMenu className="inline sm:pr-1" />
-                <span className="hidden sm:inline text-base">Menu</span>
+                <span className="hidden sm:inline text-base">{'Menu'}</span>
             </button>
             <div ref={sidePanelRef} className="hidden">
                 <div
@@ -405,14 +405,14 @@ export function MenuButton() {
                     <ul className="flex flex-col gap-10 p-14 text-3xl">
                         <li className="transition-all duration-300 hover:text-4xl">
                             <Link href={'/'} onClick={closeSidePanel}>
-                                Home
+                                {'Home'}
                             </Link>
                         </li>
                         <li
                             className="transition-all duration-300 hover:text-4xl"
                             onClick={toggleList}
                         >
-                            <span className="cursor-pointer">Products</span>
+                            <span className="cursor-pointer">{'Products'}</span>
                             <ul
                                 ref={productListRef}
                                 className="flex flex-col gap-4 pt-4 pl-4 text-xl hidden"
@@ -435,17 +435,17 @@ export function MenuButton() {
                         </li>
                         <li className="transition-all duration-300 hover:text-4xl">
                             <Link href={'/account'} onClick={closeSidePanel}>
-                                Account
+                                {'Account'}
                             </Link>
                         </li>
                         <li className="transition-all duration-300 hover:text-4xl">
                             <Link href={'/cart'} onClick={closeSidePanel}>
-                                Cart
+                                {'Cart'}
                             </Link>
                         </li>
                     </ul>
                     <div className="p-4 text-center font-normal text-xs sm:text-sm">
-                        © 2024 MyStore, Inc. All rights reserved.
+                        {'© 2024 MyStore, Inc. All rights reserved.'}
                     </div>
                 </div>
             </div>
