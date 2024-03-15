@@ -1,5 +1,3 @@
-'use client';
-
 import { redirect } from 'next/navigation';
 import Wrap from '@/components/common/template/Wrap';
 import SignUpForm from '@/components/_account/SignUpForm';
@@ -19,12 +17,13 @@ export default function SignUpPage() {
                     </p>
                 </div>
                 <SignUpForm
-                    action={async (formData) =>
+                    action={async (formData) => {
+                        'use server';
                         handleSubmit(formData).catch((e) => {
                             alert(e.message);
                             redirect('/account');
-                        })
-                    }
+                        });
+                    }}
                 />
             </div>
         </Wrap>

@@ -1,14 +1,10 @@
-'use client';
-
-import { useRouter } from 'next/navigation';
+import CancelButton from "./CancelButton";
 
 export default function SignUpForm({
     action,
 }: {
     action: (formData: FormData) => Promise<void>;
 }) {
-    const router = useRouter();
-
     const formInputs = [
         { id: 'firstName', text: 'First name', type: 'text' },
         { id: 'lastName', text: 'Last name', type: 'text' },
@@ -42,11 +38,12 @@ export default function SignUpForm({
 
             <div className="mt-12 pt-12 border-t border-gray-300 dark:border-neutral-400">
                 <h2 className="text-lg sm:text-xl font-semibold">
-                    Notifications
+                    {'Notifications'}
                 </h2>
                 <p className="mt-1 text-sm text-gray-600 dark:text-neutral-400">
-                    We'll let you know about new arrivals, discounts, events,
-                    and more!
+                    {
+                        "We'll let you know about new arrivals, discounts, events, and more!"
+                    }
                 </p>
 
                 <div className="mt-10 space-y-4">
@@ -61,7 +58,7 @@ export default function SignUpForm({
                             htmlFor="notify-email"
                             className="ml-4 text-sm sm:text-base cursor-pointer"
                         >
-                            Receive Email Notifications
+                            {'Receive Email Notifications'}
                         </label>
                     </div>
                     <div className="flex items-center">
@@ -75,17 +72,22 @@ export default function SignUpForm({
                             htmlFor="notify-sms"
                             className="ml-4 text-sm sm:text-base cursor-pointer"
                         >
-                            Receive SMS Push Notifications
+                            {'Receive SMS Push Notifications'}
                         </label>
                     </div>
                 </div>
             </div>
 
             <div className="my-12 text-center text-xs">
-                By creating an account, you agree to My Store's{' '}
-                <span className="underline cursor-pointer">Privacy Policy</span>
+                {"By creating an account, you agree to My Store's "}
+                <span className="underline cursor-pointer">
+                    {'Privacy Policy'}
+                </span>
                 {' and '}
-                <span className="underline cursor-pointer">Terms of Use</span>.
+                <span className="underline cursor-pointer">
+                    {'Terms of Use'}
+                </span>
+                .
             </div>
 
             <div className="mt-6 flex justify-center gap-2">
@@ -93,15 +95,9 @@ export default function SignUpForm({
                     type="submit"
                     className="rounded-md px-14 py-2 text-base sm:text-lg text-white shadow-md bg-blue-600 hover:bg-blue-700"
                 >
-                    Join
+                    {'Join'}
                 </button>
-                <button
-                    onClick={() => router.back()}
-                    type="button"
-                    className="rounded-md px-4 py-2 text-base sm:text-lg text-blue-600 hover:bg-blue-100 dark:hover:bg-black"
-                >
-                    Cancel
-                </button>
+                <CancelButton />
             </div>
         </form>
     );

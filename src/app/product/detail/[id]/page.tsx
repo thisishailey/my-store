@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { getProductsData, getProductData } from '@/api/products';
 import Wrap from '@/components/common/template/Wrap';
 import ProductBreadcrumbs from '@/components/_product/_detail/Breadcrumbs';
@@ -20,12 +21,14 @@ export default async function ProductDetailPage({
     const product = await getProductData(id);
 
     return (
-        <Wrap>
-            <ProductBreadcrumbs
-                category={product.category}
-                name={product.title}
-            />
-            <ProductDetailCard product={product} />
-        </Wrap>
+        <Suspense fallback={<div>Loading...</div>}>
+            <Wrap>
+                <ProductBreadcrumbs
+                    category={product.category}
+                    name={product.title}
+                />
+                <ProductDetailCard product={product} />
+            </Wrap>
+        </Suspense>
     );
 }
