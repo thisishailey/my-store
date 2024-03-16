@@ -11,33 +11,29 @@
     -   React Icons
     -   Heroicons
 
--   JS Lib & Framework
+-   Language & Frameworks
 
     -   TypeScript
     -   React
     -   Next.js
 
--   JS modules
-
-    -   JSON Web Tokens (JWT)
-    -   OrderCode
-
 -   State Management
 
     -   Zustand
 
--   Storage
+-   Modules & API
 
-    -   Local Storage
-    -   Cookies
-
--   API
-
+    -   JSON Web Tokens (JWT)
+    -   OrderCode
     -   Fake Store API
 
 -   Version Control
 
     -   Git
+
+-   Deployment
+
+    -   Vercel
 
 -   Other Tools
 
