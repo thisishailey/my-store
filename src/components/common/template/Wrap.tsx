@@ -9,10 +9,5 @@ export default function Wrap({ children, classList }: WrapProps) {
 
     const wrapClasses = defaultClasses + additionalClasses;
 
-    return (
-        <>
-            <div className={wrapClasses}>{children}</div>
-            <div className="h-12"></div>
-        </>
-    );
+    return <div className={wrapClasses}>{children}</div>;
 }

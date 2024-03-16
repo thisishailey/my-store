@@ -1,19 +1,15 @@
 interface PageProps {
     children?: React.ReactNode;
-    classList?: string;
+    home?: boolean;
 }
 
-export default function Page({ children, classList }: PageProps) {
-    const defaultClasses =
-        'relative top-16 z-10 bg-neutral-50 dark:bg-neutral-900 ';
-    const additionalClasses = classList || '';
-
-    const pageClasses = defaultClasses + additionalClasses;
+export default function Page({ children, home }: PageProps) {
+    const pageClasses =
+        'relative top-16 min-h-screen py-10 px-4 bg-neutral-50 dark:bg-neutral-900 ';
+    const homePageClasses =
+        'relative top-16 min-h-screen bg-neutral-50 dark:bg-neutral-900 ';
 
     return (
-        <>
-            <main className={pageClasses}>{children}</main>
-            <div className="h-12"></div>
-        </>
+        <main className={home ? homePageClasses : pageClasses}>{children}</main>
     );
 }

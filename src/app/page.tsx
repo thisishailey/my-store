@@ -18,7 +18,7 @@ export default async function HomePage() {
     ];
 
     return (
-        <Page>
+        <Page home>
             <Carousel />
             <Wrap classList="min-h-screen px-10 pt-10 lg:pt-14">
                 {sectionList.map((section) => {

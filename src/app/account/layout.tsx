@@ -5,5 +5,5 @@ export default function AccountLayout({
 }: {
     children: React.ReactNode;
 }) {
-    return <Page classList="py-10 px-4 min-h-screen">{children}</Page>;
+    return <Page>{children}</Page>;
 }
