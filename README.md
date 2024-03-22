@@ -1,4 +1,14 @@
-# Build an ecommerce website
+# My Store
+
+An e-commerce website built with front-end frameworks and libraries.
+
+## Structure
+
+-   Home
+-   Search
+-   Products
+-   Account
+-   Cart & Checkout
 
 ## Tech Stack
 
