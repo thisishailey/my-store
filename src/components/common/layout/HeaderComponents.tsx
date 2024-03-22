@@ -2,46 +2,93 @@
 
 import Link from 'next/link';
 import { useSearchParams, useRouter } from 'next/navigation';
-import { useState, Fragment, useRef, useEffect } from 'react';
-import { useTheme } from 'next-themes';
+import { useEffect, useState, Fragment, useRef } from 'react';
 import { Popover, Transition } from '@headlessui/react';
 import { useCartStore } from '@/stores/cartStore';
 import { useAccountStore } from '@/stores/accountStore';
 import { logout } from '@/lib';
 import ProductImage from '@/components/common/ProductImage';
 import { EmptyCartButton } from '@/components/_cart/EmptyCart';
+import { THEME_LS_KEY } from '@/constants/theme';
 import { CATEGORY } from '@/constants/category';
 import { VscAccount } from 'react-icons/vsc';
 import { IoCloseOutline } from 'react-icons/io5';
 import { HiOutlineShoppingBag } from 'react-icons/hi2';
 import { FiMenu, FiSearch } from 'react-icons/fi';
-import { SunIcon, MoonIcon } from '@heroicons/react/24/outline';
-
-function ThemeSwitch() {
-    const [mounted, setMounted] = useState(false);
-    const { setTheme, resolvedTheme } = useTheme();
-
-    useEffect(() => setMounted(true), []);
-
-    if (!mounted) return;
-
-    const button = document.querySelector('.theme-button') as HTMLButtonElement;
-    button.classList.add('animate-[spinQuarter_300ms_linear_1]');
-    setTimeout(() => {
-        button.classList.remove('animate-[spinQuarter_300ms_linear_1]');
-    }, 300);
-
-    if (resolvedTheme === 'dark') {
-        return <MoonIcon onClick={() => setTheme('light')} />;
-    } else if (resolvedTheme === 'light') {
-        return <SunIcon onClick={() => setTheme('dark')} />;
-    }
-}
+import {
+    MdOutlineLightMode,
+    MdLightMode,
+    MdOutlineDarkMode,
+    MdDarkMode,
+} from 'react-icons/md';
 
 export function ThemeButton() {
+    const [isDarkMode, setIsDarkMode] = useState<boolean>();
+    const [isMouseOver, setIsMouseOver] = useState<boolean>(false);
+    const [isToggled, setIsToggled] = useState<boolean>(false);
+
+    useEffect(() => {
+        const storageData = localStorage.getItem(THEME_LS_KEY);
+        const darkPreference =
+            window.matchMedia &&
+            window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (storageData) {
+            if (storageData === 'light') {
+                setIsDarkMode(false);
+            } else {
+                setIsDarkMode(true);
+                document.documentElement.classList.add('dark');
+            }
+        } else if (darkPreference) {
+            setIsDarkMode(true);
+            document.documentElement.classList.add('dark');
+        } else {
+            setIsDarkMode(false);
+        }
+    }, []);
+
+    const toggleTheme = (e: React.MouseEvent) => {
+        if (isDarkMode) {
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem(THEME_LS_KEY, 'light');
+        } else {
+            document.documentElement.classList.add('dark');
+            localStorage.setItem(THEME_LS_KEY, 'dark');
+        }
+
+        setIsDarkMode(!isDarkMode);
+        setIsMouseOver(false);
+        setIsToggled(true);
+
+        const button = e.currentTarget as HTMLButtonElement;
+        button.classList.add('animate-[spinQuarter_300ms_linear_1]');
+        setTimeout(() => {
+            button.classList.remove('animate-[spinQuarter_300ms_linear_1]');
+        }, 300);
+    };
+
     return (
-        <button className="w-9 p-2 rounded-full hover:bg-neutral-300/40 dark:hover:bg-neutral-600/40 transition duration-300 theme-button">
-            <ThemeSwitch />
+        <button
+            className="p-2.5 text-lg rounded-full hover:bg-neutral-300/40 dark:hover:bg-neutral-600/40 transition duration-300"
+            onClick={toggleTheme}
+            onMouseOver={() => !isToggled && setIsMouseOver(true)}
+            onMouseLeave={() => {
+                setIsMouseOver(false);
+                setIsToggled(false);
+            }}
+        >
+            {isMouseOver ? (
+                isDarkMode ? (
+                    <MdLightMode />
+                ) : (
+                    <MdOutlineDarkMode />
+                )
+            ) : isDarkMode ? (
+                <MdDarkMode />
+            ) : (
+                <MdOutlineLightMode />
+            )}
         </button>
     );
 }

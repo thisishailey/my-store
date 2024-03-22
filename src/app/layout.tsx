@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import { Providers } from './providers';
 import Header from '@/components/common/layout/Header';
 import Footer from '@/components/common/layout/Footer';
 import './globals.css';
@@ -20,17 +19,17 @@ export default function RootLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
-    const htmlClasses = `p-0 overflow-auto bg-neutral-50 dark:bg-neutral-900`;
     const bodyClasses = `${inter.className} bg-neutral-50 text-neutral-950 dark:bg-neutral-900 dark:text-neutral-50`;
 
     return (
-        <html lang="en" className={htmlClasses} suppressHydrationWarning>
+        <html
+            lang="en"
+            className="p-0 overflow-auto bg-neutral-50 dark:bg-neutral-900"
+        >
             <body className={bodyClasses}>
-                <Providers>
-                    <Header />
-                    {children}
-                    <Footer />
-                </Providers>
+                <Header />
+                {children}
+                <Footer />
             </body>
         </html>
     );
