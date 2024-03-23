@@ -1,6 +1,7 @@
 import { Suspense } from 'react';
 import Link from 'next/link';
 import Wrap from '@/components/common/template/Wrap';
+import HeaderLoading from './HeaderLoading';
 import {
     MenuButton,
     ThemeButton,
@@ -11,7 +12,7 @@ import {
 
 export default function Header() {
     return (
-        <Suspense fallback={<div>{'Loading...'}</div>}>
+        <Suspense fallback={<HeaderLoading />}>
             <header className="fixed top-0 left-0 right-0 z-30 flex items-center justify-between h-16 px-4 sm:px-10 border-b border-solid border-gray-300 bg-gray-50 dark:border-neutral-600 dark:bg-neutral-900">
                 <Wrap classList="flex justify-between">
                     <div className="hidden sm:flex flex-1 basis-0 items-center md:gap-1">

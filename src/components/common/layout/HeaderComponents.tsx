@@ -23,24 +23,43 @@ function ThemeSwitch() {
 
     useEffect(() => setMounted(true), []);
 
-    if (!mounted) return;
+    if (!mounted)
+        return <span className="loading loading-ring loading-sm"></span>;
 
-    const button = document.querySelector('.theme-button') as HTMLButtonElement;
-    button.classList.add('animate-[spinQuarter_300ms_linear_1]');
-    setTimeout(() => {
-        button.classList.remove('animate-[spinQuarter_300ms_linear_1]');
-    }, 300);
+    const toggleAnimation = () => {
+        const button = document.querySelector(
+            '.theme-button'
+        ) as HTMLButtonElement;
+        button.classList.add('animate-[spinQuarter_300ms_linear_1]');
+        setTimeout(() => {
+            button.classList.remove('animate-[spinQuarter_300ms_linear_1]');
+        }, 300);
+    };
 
     if (resolvedTheme === 'dark') {
-        return <MoonIcon onClick={() => setTheme('light')} />;
+        return (
+            <MoonIcon
+                onClick={() => {
+                    setTheme('light');
+                    toggleAnimation();
+                }}
+            />
+        );
     } else if (resolvedTheme === 'light') {
-        return <SunIcon onClick={() => setTheme('dark')} />;
+        return (
+            <SunIcon
+                onClick={() => {
+                    setTheme('dark');
+                    toggleAnimation();
+                }}
+            />
+        );
     }
 }
 
 export function ThemeButton() {
     return (
-        <button className="w-9 p-2 rounded-full hover:bg-neutral-300/40 dark:hover:bg-neutral-600/40 transition duration-300 theme-button">
+        <button className="w-9 h-9 p-2 rounded-full hover:bg-neutral-300/40 dark:hover:bg-neutral-600/40 transition duration-300 theme-button">
             <ThemeSwitch />
         </button>
     );

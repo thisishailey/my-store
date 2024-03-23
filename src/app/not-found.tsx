@@ -13,7 +13,7 @@ export default async function NotFound() {
                     </p>
                     <Link
                         href="/"
-                        className="py-2 px-3 rounded-lg border-1 border-neutral-400 hover:bg-gray-100 dark:hover:bg-neutral-800 transition duration-300"
+                        className="py-2.5 px-3.5 text-lg rounded-lg border-1 border-neutral-400 hover:bg-gray-100 dark:hover:bg-neutral-800 transition duration-300"
                     >
                         {'Return Home'}
                     </Link>

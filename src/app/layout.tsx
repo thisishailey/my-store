@@ -20,12 +20,11 @@ export default function RootLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
-    const htmlClasses = `p-0 overflow-auto bg-neutral-50 dark:bg-neutral-900`;
-    const bodyClasses = `${inter.className} bg-neutral-50 text-neutral-950 dark:bg-neutral-900 dark:text-neutral-50`;
-
     return (
-        <html lang="en" className={htmlClasses} suppressHydrationWarning>
-            <body className={bodyClasses}>
+        <html lang="en" suppressHydrationWarning>
+            <body
+                className={`${inter.className} bg-neutral-50 text-neutral-950 dark:bg-neutral-900 dark:text-neutral-50`}
+            >
                 <Providers>
                     <Header />
                     {children}
