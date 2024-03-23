@@ -1,10 +1,11 @@
 'use server';
 
-import CheckoutForm from '@/components/_checkout/CheckoutForm';
-import { getCurrentUser } from '@/app/checkout/action';
+import CheckoutForm from '@/components/_order/CheckoutForm';
+import { getCurrentUser } from '@/app/order/checkout/action';
 
-export default async function CheckoutPage() {
+export default async function OrderCheckoutPage() {
     const user = await getCurrentUser();
+	
     return (
         <>
             {user ? (

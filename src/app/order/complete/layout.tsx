@@ -3,9 +3,9 @@
 import { useEffect, useState } from 'react';
 import Page from '@/components/common/template/Page';
 import Wrap from '@/components/common/template/Wrap';
-import CheckoutLoading from '@/components/_checkout/CheckoutLoading';
+import OrderLoading from '@/components/_order/OrderLoading';
 
-export default function CheckoutLayout({
+export default function OrderCompleteLayout({
     children,
 }: {
     children: React.ReactNode;
@@ -20,12 +20,7 @@ export default function CheckoutLayout({
 
     return (
         <Page>
-            <Wrap>
-                <h2 className="text-2xl sm:text-3xl font-semibold w-full m-6 py-4 px-1">
-                    {'Checkout'}
-                </h2>
-                {isLoading ? <CheckoutLoading /> : children}
-            </Wrap>
+            <Wrap>{isLoading ? <OrderLoading /> : children}</Wrap>
         </Page>
     );
 }

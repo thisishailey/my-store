@@ -11,7 +11,7 @@ export default function CartSummary({ cart }: { cart: ICartItem[] }) {
 
     const handleCheckout = () => {
         setCheckout(cart, true);
-        push('/checkout');
+        push('/order/checkout');
     };
 
     const subtotal = cart.reduce((acc, cur) => {

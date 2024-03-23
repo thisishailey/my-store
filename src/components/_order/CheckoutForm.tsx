@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation';
 import { useCheckoutStore } from '@/stores/checkoutStore';
 import { useOrderStore } from '@/stores/orderStore';
 import { useCartStore } from '@/stores/cartStore';
-import CheckoutSummary from '@/components/_checkout/CheckoutSummary';
+import CheckoutSummary from '@/components/_order/CheckoutSummary';
 
 interface Props {
     firstName?: string;
@@ -20,13 +20,15 @@ export default function CheckoutForm(props: Props) {
     const { addOrder } = useOrderStore();
     const { emptyCart } = useCartStore();
 
+    let checkoutDisplay = checkout;
+
     const handleOrderComplete = () => {
+        replace('/order/complete');
         addOrder(checkout);
         clearCheckout();
         if (fromCart) {
             emptyCart();
         }
-        replace('/checkout/success');
     };
 
     const formInputs = [
@@ -86,7 +88,7 @@ export default function CheckoutForm(props: Props) {
                     </div>
                 ))}
             </div>
-            <CheckoutSummary checkout={checkout} />
+            <CheckoutSummary checkout={checkoutDisplay} />
         </form>
     );
 }

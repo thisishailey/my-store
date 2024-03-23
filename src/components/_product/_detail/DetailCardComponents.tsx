@@ -159,7 +159,7 @@ export function PurchaseButton({ item }: { item: IProduct }) {
 
     return (
         <Link
-            href={'/checkout'}
+            href={'/order/checkout'}
             className="btn flex-1 min-w-24 h-auto p-3 shadow-md font-normal text-base sm:text-xl !text-blue-600 !border-blue-600 bg-white dark:!bg-transparent hover:!bg-blue-100 dark:hover:!bg-black transition duration-300"
             onClick={() => {
                 setCheckout([{ ...item, qty: 1 }]);

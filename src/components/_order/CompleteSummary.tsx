@@ -1,11 +1,11 @@
-'use client';
-
-import { useOrderStore } from '@/stores/orderStore';
 import OrderSummary from '@/components/common/OrderSummary';
+import type IOrder from '@/types/order';
 
-export default function OrderCompleteSummary() {
-    const { currentOrder } = useOrderStore();
-
+export default function CompleteSummary({
+    currentOrder,
+}: {
+    currentOrder: IOrder;
+}) {
     const subtotal = currentOrder.orderItems.reduce((acc, cur) => {
         return cur.price * cur.qty + acc;
     }, 0);
